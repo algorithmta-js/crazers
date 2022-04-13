@@ -19,7 +19,7 @@
 
 ### DFS와 BFS
 
->![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : 타겟 넘버]()** _solved by 혁진_
+>![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : 타겟 넘버](/problems/dfs/타겟넘버)** _solved by 혁진_
 
 
 ### 스택과 큐
