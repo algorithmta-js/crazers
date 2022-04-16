@@ -6,10 +6,9 @@ function solution(array, commands) {
     let commandsIndex = 0;
     while (commandsIndex < commands.length) {
       for (i of commands) {
-        const newArr = array.slice(i[0], i[1]);
-        mergeSort(newArr);
-        answer.push(newArr[i[2]]);
-        console.log(mergeSort(newArr));
+        const newArr = array.slice(i[0] - 1, i[1]);
+        const msArr = mergeSort(newArr);
+        answer.push(msArr[i[2] - 1]);
         commandsIndex++;
       }
     }
