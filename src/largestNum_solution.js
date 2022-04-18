@@ -1,11 +1,13 @@
 function solution(numbers) {
   var answer = "";
 
-  const permutationNumbers = getPermutations(numbers, numbers.length); // 순열로 배열 요소의 순서 섞기
-  const pastedNumbers = permutationNumbers.map((num) => num.join("")); // 배열 요소 이어붙이기
-  const sortedArr = quickSort(pastedNumbers); // 퀵소트로 배열의 요소 정렬하기
-  const largestNum = sortedArr[sortedArr.length - 1]; // 가장 큰 수
-  answer = largestNum; // 값 넣기
+  if (numbersCheck(numbers)) {
+    const permutationNumbers = getPermutations(numbers, numbers.length); // 순열로 배열 요소의 순서 섞기
+    const pastedNumbers = permutationNumbers.map((num) => num.join("")); // 배열 요소 이어붙이기
+    const sortedArr = quickSort(pastedNumbers); // 퀵소트로 배열의 요소 정렬하기
+    const largestNum = sortedArr[sortedArr.length - 1]; // 가장 큰 수
+    answer = String(largestNum); // 문자열로 바꾸어 값 넣기
+  }
 
   return answer;
 }
@@ -49,4 +51,13 @@ function quickSort(arr) {
   const sortedGreaterArr = quickSort(greater);
 
   return [...sortedLessArr, pivot, ...sortedGreaterArr];
+}
+
+function numbersCheck(arr) {
+  // 제한사항
+  if (arr.length >= 1 && arr.length <= 100000) {
+    for (el of arr) {
+      if (el >= 0 && el <= 1000) return true;
+    }
+  }
 }
