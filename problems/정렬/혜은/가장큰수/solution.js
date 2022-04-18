@@ -35,7 +35,7 @@ function quickSort(arr) {
     return arr;
   }
 
-  const pivot = arr[0];
+  const pivot = getPivot(arr);
   const less = [];
   const greater = [];
 
@@ -59,5 +59,18 @@ function numbersCheck(arr) {
     for (el of arr) {
       if (el >= 0 && el <= 1000) return true;
     }
+  }
+}
+
+function getPivot(arr) {
+  if (arr.length > 2) {
+    let randomIndexArray = [];
+    for (let i = 0; i < 3; i++) {
+      const randomNum = Math.floor(Math.random() * arr.length);
+      randomIndexArray.push(randomNum);
+      return randomIndexArray[1];
+    }
+  } else {
+    return arr[0];
   }
 }
