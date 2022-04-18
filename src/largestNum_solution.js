@@ -1,9 +1,11 @@
 function solution(numbers) {
   var answer = "";
 
-  const permutationNumbers = getPermutations(numbers, numbers.length);
-  const arr = permutationNumbers.map((pastedNum) => pastedNum.join(""));
-  console.log(arr);
+  const permutationNumbers = getPermutations(numbers, numbers.length); // 순열로 배열 요소의 순서 섞기
+  const pastedNumbers = permutationNumbers.map((num) => num.join("")); // 배열 요소 이어붙이기
+  const sortedArr = quickSort(pastedNumbers); // 퀵소트로 배열의 요소 정렬하기
+  const largestNum = sortedArr[sortedArr.length - 1]; // 가장 큰 수
+  answer = largestNum; // 값 넣기
 
   return answer;
 }
@@ -24,4 +26,27 @@ function getPermutations(arr, selectNum) {
     // 배열 spread syntax로 모두 다 push
   });
   return results;
+}
+
+function quickSort(arr) {
+  if (arr.length < 2) {
+    return arr;
+  }
+
+  const pivot = arr[0];
+  const less = [];
+  const greater = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] <= pivot) {
+      less.push(arr[i]);
+    } else {
+      greater.push(arr[i]);
+    }
+  }
+
+  const sortedLessArr = quickSort(less);
+  const sortedGreaterArr = quickSort(greater);
+
+  return [...sortedLessArr, pivot, ...sortedGreaterArr];
 }
