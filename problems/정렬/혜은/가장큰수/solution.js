@@ -46,7 +46,6 @@ function quickSort(arr) {
       greater.push(arr[i]);
     }
   }
-
   const sortedLessArr = quickSort(less);
   const sortedGreaterArr = quickSort(greater);
 
@@ -64,12 +63,12 @@ function numbersCheck(arr) {
 
 function getPivot(arr) {
   if (arr.length > 2) {
-    let randomIndexArray = [];
+    const randomIndexArray = [];
     for (let i = 0; i < 3; i++) {
-      const randomNum = Math.floor(Math.random() * arr.length);
-      randomIndexArray.push(randomNum);
-      return randomIndexArray[1];
+      const randomIndex = Math.floor(Math.random() * arr.length);
+      randomIndexArray.push(arr[randomIndex]);
     }
+    return randomIndexArray[1];
   } else {
     return arr[0];
   }
