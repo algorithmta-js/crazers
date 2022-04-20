@@ -1,14 +1,13 @@
 function solution(numbers) {
-  var answer = "";
+  let answer = "";
 
   if (numbersCheck(numbers)) {
     const permutationNumbers = getPermutations(numbers, numbers.length); // 순열로 배열 요소의 순서 섞기
-    const pastedNumbers = permutationNumbers.map((num) => num.join("")); // 배열 요소 이어붙이기
-    const sortedArr = quickSort(pastedNumbers); // 퀵소트로 배열의 요소 정렬하기
+    const pastedNumArr = permutationNumbers.map((num) => num.join("")); // 배열 요소 이어붙이기
+    const sortedArr = quickSort(pastedNumArr); // 퀵소트로 배열의 요소 정렬하기
     const largestNum = sortedArr[sortedArr.length - 1]; // 가장 큰 수
-    answer = String(largestNum); // 문자열로 바꾸어 값 넣기
+    answer = largestNum.toString(); // 문자열로 바꾸어 값 넣기
   }
-
   return answer;
 }
 
@@ -31,9 +30,7 @@ function getPermutations(arr, selectNum) {
 }
 
 function quickSort(arr) {
-  if (arr.length < 2) {
-    return arr;
-  }
+  if (arr.length <= 1) return arr;
 
   const pivot = getPivot(arr);
   const less = [];
@@ -57,18 +54,20 @@ function numbersCheck(arr) {
   if (arr.length >= 1 && arr.length <= 100000) {
     for (el of arr) {
       if (el >= 0 && el <= 1000) return true;
+      else return false;
     }
   }
 }
 
 function getPivot(arr) {
-  if (arr.length > 2) {
-    const randomIndexArray = [];
+  if (arr.length >= 3) {
+    const randomArray = [];
     for (let i = 0; i < 3; i++) {
       const randomIndex = Math.floor(Math.random() * arr.length);
-      randomIndexArray.push(arr[randomIndex]);
+      randomArray.push(arr[randomIndex]);
+      randomArray.sort(); // 크기순 정렬
     }
-    return randomIndexArray[1];
+    return randomArray[1];
   } else {
     return arr[0];
   }

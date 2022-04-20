@@ -1,6 +1,6 @@
 // 정렬 > K번째 수
 function solution(array, commands) {
-  var answer = [];
+  let answer = [];
 
   if (arrCheck(array) && comCheck(commands)) {
     let commandsIndex = 0;
@@ -55,6 +55,7 @@ function arrCheck(array) {
   if (array.length >= 1 && array.length <= 100) {
     for (el of array) {
       if (el >= 1 && el <= 100) return true;
+      else return false;
     }
   }
 }
@@ -64,6 +65,7 @@ function comCheck(commands) {
   if (commands.length >= 1 && commands.length <= 50) {
     for (el of commands) {
       if (el.length === 3) return true;
+      else return false;
     }
   }
 }
