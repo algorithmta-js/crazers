@@ -43,6 +43,7 @@ function quickSort(arr) {
       greater.push(arr[i]);
     }
   }
+
   const sortedLessArr = quickSort(less);
   const sortedGreaterArr = quickSort(greater);
 
@@ -65,8 +66,8 @@ function getPivot(arr) {
     for (let i = 0; i < 3; i++) {
       const randomIndex = Math.floor(Math.random() * arr.length);
       randomArray.push(arr[randomIndex]);
-      randomArray.sort(); // 크기순 정렬
     }
+    randomArray.sort(); // 크기순 정렬
     return randomArray[1];
   } else {
     return arr[0];
