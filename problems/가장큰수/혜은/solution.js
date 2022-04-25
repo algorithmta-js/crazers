@@ -44,10 +44,10 @@ function quickSort(arr) {
     }
   }
 
-  const sortedLessArr = quickSort(less);
-  const sortedGreaterArr = quickSort(greater);
+  // const sortedLessArr = quickSort(less);
+  // const sortedGreaterArr = quickSort(greater);
 
-  return [...sortedLessArr, pivot, ...sortedGreaterArr];
+  return [...quickSort(less), pivot, ...quickSort(greater)];
 }
 
 function numbersCheck(arr) {
