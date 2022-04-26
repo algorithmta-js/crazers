@@ -16,14 +16,44 @@
 
 ### 정렬
 
+#### 📖 [이론 정리](/contents/정렬.md)
+----
+
+>![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : H-Index](/problems/H-Index)** 
+
+|[혁진](/problems/H-Index/혁진)|소령|혜은|서희|
+|--|--|--|--|
+
+-------
+
+>![lev](https://img.shields.io/badge/Level1-green) **[Programmers : K번째수](/problems/K번째수)** 
+
+|[혁진](/problems/K번째수/혁진)|[소령](/problems/K번째수/소령)|[혜은](/problems/K번째수/혜은)|[서희](/problems/K번째수/서희)|
+|--|--|--|--|
+
+--------
+
+>![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : 가장큰수](/problems/가장큰수)** 
+
+|혁진|[소령](/problems/가장큰수/소령)|[혜은](/problems/가장큰수/혜은)|[서희](/problems/가장큰수/서희)|
+|--|--|--|--|
+
+-----
+
 
 ### DFS와 BFS
 
->![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : 타겟 넘버](/problems/dfs/타겟넘버)** _solved by 혁진_
+>![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : 타겟 넘버](/problems/타겟넘버)**
 
+|[혁진](/problems/타겟넘버/혁진)|소령|혜은|서희|
+|--|--|--|--|
+
+
+-------
 
 ### 스택과 큐
 
+#### 📖 [이론 정리](/contents/스택과큐.md)
 
 ### 우선순위큐와 힙
 
