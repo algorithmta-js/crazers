@@ -1,25 +1,32 @@
+const Queue = require('./queue');
+
 function solution(priorities, location) {
   let answer = 0;
   
-  const workStation = priorities.map((p, i) => ([p, i]));
+  const workStationQueue = new Queue();
+  priorities.map((p, i) => {
+    workStationQueue.enqueue([p, i]);
+    console.log(workStationQueue.peek(i))
+  });
   const _length = priorities.length;
+
   while (answer <= _length) {
-    const pivotDoc = workStation.shift();
-    
-    let i;
-    for (i = 0; i < workStation.length; i++) {
-      if (pivotDoc[0] < workStation[i][0]) {
-        workStation.push(pivotDoc);
-        break;
-      }
-    }
-    
-    if (i === workStation.length) {
-      answer++;
+      const pivotDoc = workStationQueue.dequeue();
       
-      if (pivotDoc[1] === location) {
-        return answer;
+      let i;
+      for (i = 0; i < workStationQueue.length; i++) {
+          if (pivotDoc[0] < workStationQueue.data[i][0]) {
+              workStationQueue.enqueue(pivotDoc);
+              break;
+          }
       }
-    }
+      
+      if (i === workStationQueue.length) {
+          answer++;
+          
+          if (pivotDoc[1] === location) {
+              return answer;
+          }
+      }
   }
 }
