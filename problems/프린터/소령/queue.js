@@ -5,6 +5,10 @@ class Queue {
   }
 
   dequeue() {
+    if (this.isEmpty) {
+      return null;
+    }
+    
     this._length--;
     return this._workStation.shift();
   }
