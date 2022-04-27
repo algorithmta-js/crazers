@@ -6,7 +6,6 @@ function solution(priorities, location) {
   const workStationQueue = new Queue();
   priorities.map((p, i) => {
     workStationQueue.enqueue([p, i]);
-    console.log(workStationQueue.peek(i))
   });
   const _length = priorities.length;
 

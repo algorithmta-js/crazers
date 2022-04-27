@@ -1,3 +1,5 @@
+const Queue = require('../../프린터/소령/queue');
+
 function getRestDay(progress, speed) {
   const restProgress = 100 - progress;
   
@@ -5,12 +7,8 @@ function getRestDay(progress, speed) {
 }
 
 function getBatchCnt(pivot, progressList) {
-  // 1개는 무조건 배포
   let cnt = 1;
-
-  // 일괄로 몰아서 배포할 아이들이 몇 개인지 확인
-  // 가장 먼저 배포해야하는 놈의 남은 시간보다 적거나 똑같이 남은 아이들 확인
-  while (pivot >= progressList[cnt]) {
+  while (pivot >= progressList.peek(cnt)) {
     cnt++;
   }
 
@@ -19,18 +17,24 @@ function getBatchCnt(pivot, progressList) {
 
 function solution(progresses, speeds) {
   const answer = [];
+
+  const restProgressList = new Queue();
   
-  let restProgressList = progresses.map((progress, i) => {
-    return getRestDay(progress, speeds[i])
+  progresses.map((progress, i) => {
+    const restDay = getRestDay(progress, speeds[i])
+    restProgressList.enqueue(restDay);
   });
   
   while (restProgressList.length > 0) {
-    const pivotProgress = restProgressList[0];
+    const pivotProgress = restProgressList.peek(0);
     
-    const batchCnt = getBatchCnt(pivotProgress, restProgressList);
+    let batchCnt = getBatchCnt(pivotProgress, restProgressList);
 
-    restProgressList = restProgressList.slice(batchCnt);
     answer.push(batchCnt);
+    while (batchCnt) {
+      restProgressList.dequeue();
+      batchCnt--;
+    }
   }
   return answer;
 }
