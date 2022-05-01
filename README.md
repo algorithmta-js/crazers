@@ -54,6 +54,23 @@
 ### 스택과 큐
 
 #### 📖 [이론 정리](/contents/스택과큐.md)
+---
+
+>![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : 기능개발](/problems/기능개발)** 
+
+|[혁진](/problems/기능개발/혁진)|[소령](/problems/기능개발/소령)|[혜은](/problems/기능개발/혜은)|[서희](/problems/기능개발/서희)| [주희](/problems/기능개발/주희)|
+|--|--|--|--|--|
+
+--------
+
+>![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : 프린터](/problems/프린터)** 
+
+|[혁진](/problems/프린터/혁진)|[소령](/problems/프린터/소령)|[혜은](/problems/프린터/혜은)|[서희](/problems/프린터/서희)| 주희 |
+|--|--|--|--|--|
+
+--------
+
+
 
 ### 우선순위큐와 힙
 
