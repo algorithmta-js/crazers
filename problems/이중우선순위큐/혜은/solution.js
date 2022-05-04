@@ -175,14 +175,14 @@ function solution(operations) {
     } else if (opr[0] === "D") {
       if (priorityQueue && opr[3] === "1") {
         // 최댓값 삭제
-        maxPriorityQueue = priorityQueue;
+        maxPriorityQueue.insert(priorityQueue);
         maxPriorityQueue.pop();
-        priorityQueue = maxPriorityQueue;
+        priorityQueue.push(maxPriorityQueue);
       } else if (priorityQueue && opr[3] === "-1") {
         // 최솟값 삭제
-        minPriorityQueue = priorityQueue;
+        minPriorityQueue.insert(priorityQueue);
         minPriorityQueue.pop();
-        priorityQueue = minPriorityQueue;
+        priorityQueue.push(minPriorityQueue);
       } else return;
     }
   });
