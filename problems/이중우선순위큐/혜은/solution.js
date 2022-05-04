@@ -84,7 +84,7 @@ class MinHeap {
     this.list = [null];
   }
 
-  swap(a,b) {
+  swap(a, b) {
     [this.list[a], this.list[b]] = [this.list[b], this.list[a]];
   }
 
@@ -100,29 +100,31 @@ class MinHeap {
     return current * 2 + 1;
   }
 
-  bubbleUp(){
-    let pos = this.size() -1; // 새로 추가한 값의 index
-    while(pos >= 1){
+  bubbleUp() {
+    let pos = this.size() - 1; // 새로 추가한 값의 index
+    while (pos >= 1) {
       const parent = this.getParent(pos);
-      const parentIdx = Math.floor(pos/2);
-      if(!parent) return;
+      const parentIdx = Math.floor(pos / 2);
+      if (!parent) return;
 
       if (parent > this.list[pos]) {
-        this.swap(parentIdx,pos);
+        this.swap(parentIdx, pos);
         pos = parentIdx;
-      } 
-      else return;
+      } else return;
     }
   }
 
-  bubbleDown(){
+  bubbleDown() {
     let pos = 1;
-    while(pos < this.size()){
-      const leftIdx = this.getLeftChildIdx(pos), rightIdx = this.getRightChildIdx(pos);
+    while (pos < this.size()) {
+      const leftIdx = this.getLeftChildIdx(pos),
+        rightIdx = this.getRightChildIdx(pos);
 
       let maxIndex = pos;
-      if (leftIdx < this.size() && this.list[leftIdx] < this.list[maxIndex]) maxIndex = leftIdx;
-      if (rightIdx < this.size() && this.list[rightIdx] < this.list[maxIndex]) maxIndex = rightIdx;
+      if (leftIdx < this.size() && this.list[leftIdx] < this.list[maxIndex])
+        maxIndex = leftIdx;
+      if (rightIdx < this.size() && this.list[rightIdx] < this.list[maxIndex])
+        maxIndex = rightIdx;
 
       if (maxIndex !== pos) {
         this.swap(maxIndex, pos);
@@ -137,7 +139,7 @@ class MinHeap {
   }
 
   pop() {
-    if (this.size() === 2 ) return this.list.pop();
+    if (this.size() === 2) return this.list.pop();
 
     const answer = this.list[1];
 
@@ -152,32 +154,41 @@ class MinHeap {
   }
 
   empty() {
-    return this.size() ===1;
+    return this.size() === 1;
   }
 }
 
 function solution(operations) {
   var answer = [];
   // maxHeap 사용하기
-  const queue = new MaxHeap();
+  const maxPriorityQueue = new MaxHeap();
+  const minPriorityQueue = new MinHeap();
+  const priorityQueue = [];
 
   operations.forEach((opr) => {
     if (opr[0] === "I") {
       //값 삽입
       opr.slice(2);
-      queue.insert(opr);
+      priorityQueue.push(opr);
+      maxPriorityQueue.insert(opr);
+      minPriorityQueue.insert(opr);
     } else if (opr[0] === "D") {
-      if (sortedQueue && opr[3] === "1") {
+      if (priorityQueue && opr[3] === "1") {
         // 최댓값 삭제
-        queue.pop();
-      } else (sortedQueue && opr[3] === "-1") {
-        // 최솟값 삭제..는 어케하지?? 최솟값 힙을 만들어야 되나
-        
-      }
+        maxPriorityQueue = priorityQueue;
+        maxPriorityQueue.pop();
+        priorityQueue = maxPriorityQueue;
+      } else if (priorityQueue && opr[3] === "-1") {
+        // 최솟값 삭제
+        minPriorityQueue = priorityQueue;
+        minPriorityQueue.pop();
+        priorityQueue = minPriorityQueue;
+      } else return;
     }
   });
-  answer.push(queue[0]); // 최댓값 push
-  answer.push(sortedQueue[sortedQueue.length - 1]); // 최솟값 push
+  priorityQueue.sort((a, b) => b - a);
+  answer.push(priorityQueue[0]); // 최댓값 push
+  answer.push(priorityQueue[priorityQueue.length - 1]); // 최솟값 push
 
   return answer;
 }
