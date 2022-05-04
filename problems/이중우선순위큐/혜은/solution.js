@@ -169,16 +169,18 @@ function solution(operations) {
     if (opr[0] === "I") {
       //값 삽입
       opr.slice(2);
-      priorityQueue.push(opr);
-      maxPriorityQueue.insert(opr);
-      minPriorityQueue.insert(opr);
+      const oprNum = Number(opr);
+      priorityQueue.push(oprNum);
+      maxPriorityQueue.insert(oprNum);
+      minPriorityQueue.insert(oprNum);
     } else if (opr[0] === "D") {
-      if (priorityQueue && opr[3] === "1") {
+      opr.slice(2);
+      if (priorityQueue && opr[0] === "1") {
         // 최댓값 삭제
         maxPriorityQueue.insert(priorityQueue);
         maxPriorityQueue.pop();
         priorityQueue.push(maxPriorityQueue);
-      } else if (priorityQueue && opr[3] === "-1") {
+      } else if (priorityQueue && opr[0] === "-1") {
         // 최솟값 삭제
         minPriorityQueue.insert(priorityQueue);
         minPriorityQueue.pop();
