@@ -166,21 +166,20 @@ function solution(operations) {
   const priorityQueue = [];
 
   operations.forEach((opr) => {
-    if (opr[0] === "I") {
+    // 공백 기준으로 문자와 숫자 분리
+    const [op, operand] = opr.split(" ");
+    if (op === "I") {
       //값 삽입
-      opr.slice(2);
-      const oprNum = Number(opr);
-      priorityQueue.push(oprNum);
-      maxPriorityQueue.insert(oprNum);
-      minPriorityQueue.insert(oprNum);
-    } else if (opr[0] === "D") {
-      opr.slice(2);
-      if (priorityQueue && opr[0] === "1") {
+      priorityQueue.push(operand);
+      maxPriorityQueue.insert(operand);
+      minPriorityQueue.insert(operand);
+    } else if (op === "D") {
+      if (priorityQueue && operand === "1") {
         // 최댓값 삭제
         maxPriorityQueue.insert(priorityQueue);
         maxPriorityQueue.pop();
         priorityQueue.push(maxPriorityQueue);
-      } else if (priorityQueue && opr[0] === "-1") {
+      } else if (priorityQueue && operand === "-1") {
         // 최솟값 삭제
         minPriorityQueue.insert(priorityQueue);
         minPriorityQueue.pop();
