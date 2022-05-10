@@ -19,34 +19,91 @@
 #### 📖 [이론 정리](/contents/정렬.md)
 ----
 
->![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : H-Index](/problems/H-Index)** 
+<details>
+<summary>
+  
+   <img src="https://img.shields.io/badge/Level2-blue" />
+   
+   <a href="/problems/H-Index">
+     <b>Programmers : H-Index</b>
+  </a>
+  
+</summary>
+<div markdown="1">
+  
+<br>
+    
+|[혁진](/problems/H-Index/혁진)|소령|혜은|서희|주희|
+|--|--|--|--|--|
 
-|[혁진](/problems/H-Index/혁진)|소령|혜은|서희|
-|--|--|--|--|
+</div>
+</details>
 
--------
+<details>
+<summary>
+  
+   <img src="https://img.shields.io/badge/Level1-green" />
+   
+   <a href="/problems/K번째수">
+     <b>Programmers : K번째수</b>
+  </a>
+  
+</summary>
+<div markdown="1">
+  
+<br>
+    
+|[혁진](/problems/K번째수/혁진)|[소령](/problems/K번째수/소령)|[혜은](/problems/K번째수/혜은)|[서희](/problems/K번째수/서희)|주희|
+|--|--|--|--|--|
 
->![lev](https://img.shields.io/badge/Level1-green) **[Programmers : K번째수](/problems/K번째수)** 
+</div>
+</details>
 
-|[혁진](/problems/K번째수/혁진)|[소령](/problems/K번째수/소령)|[혜은](/problems/K번째수/혜은)|[서희](/problems/K번째수/서희)|
-|--|--|--|--|
 
---------
-
->![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : 가장큰수](/problems/가장큰수)** 
-
+<details>
+<summary>
+  
+   <img src="https://img.shields.io/badge/Level2-blue" />
+   
+   <a href="/problems/가장큰수">
+     <b>Programmers : 가장큰수</b>
+  </a>
+  
+</summary>
+<div markdown="1">
+  
+<br>
+    
 |혁진|[소령](/problems/가장큰수/소령)|[혜은](/problems/가장큰수/혜은)|[서희](/problems/가장큰수/서희)|
 |--|--|--|--|
+
+</div>
+</details>
 
 -----
 
 
 ### DFS와 BFS
 
->![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : 타겟 넘버](/problems/타겟넘버)**
+<details>
+<summary>
+  
+   <img src="https://img.shields.io/badge/Level2-blue" />
+   
+   <a href="/problems/타겟넘버">
+     <b>Programmers : 타겟넘버</b>
+  </a>
+  
+</summary>
+<div markdown="1">
+    
+<br>
+    
+|[혁진](/problems/타겟넘버/혁진)|소령|혜은|서희|주희|
+|--|--|--|--|--|
 
-|[혁진](/problems/타겟넘버/혁진)|소령|혜은|서희|
-|--|--|--|--|
+</div>
+</details>
 
 
 -------
@@ -56,19 +113,45 @@
 #### 📖 [이론 정리](/contents/스택과큐.md)
 ---
 
->![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : 기능개발](/problems/기능개발)** 
-
-|[혁진](/problems/기능개발/혁진)|[소령](/problems/기능개발/소령)|[혜은](/problems/기능개발/혜은)|[서희](/problems/기능개발/서희)| [주희](/problems/기능개발/주희)|
+<details>
+<summary>
+  
+   <img src="https://img.shields.io/badge/Level2-blue" />
+   
+   <a href="/problems/기능개발">
+     <b>Programmers : 기능개발</b>
+  </a>
+  
+</summary>
+<div markdown="1">
+  
+<br>
+    
+|[혁진](/problems/기능개발/혁진)|[소령](/problems/기능개발/소령)|[혜은](/problems/기능개발/혜은)|[서희](/problems/기능개발/서희)|[주희](/problems/기능개발/주희)|
 |--|--|--|--|--|
 
---------
+</div>
+</details>
 
->![lev](https://img.shields.io/badge/Level2-blue) **[Programmers : 프린터](/problems/프린터)** 
-
-|[혁진](/problems/프린터/혁진)|[소령](/problems/프린터/소령)|[혜은](/problems/프린터/혜은)|[서희](/problems/프린터/서희)| 주희 |
+<details>
+<summary>
+  
+   <img src="https://img.shields.io/badge/Level2-blue" />
+   
+   <a href="/problems/프린터">
+     <b>Programmers : 프린터</b>
+  </a>
+  
+</summary>
+<div markdown="1">
+  
+<br>
+    
+|[혁진](/problems/프린터/혁진)|[소령](/problems/프린터/소령)|[혜은](/problems/프린터/혜은)|[서희](/problems/프린터/서희)|주희|
 |--|--|--|--|--|
 
---------
+</div>
+</details>
 
 
 
