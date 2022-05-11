@@ -1,6 +1,6 @@
 function solution(number, k) {
   let answer = "";
-  let biggestNum = 0;
+  let biggestNum = "";
   let biggestNumIndex = 0;
 
   while (k !== 0) {
@@ -13,9 +13,10 @@ function solution(number, k) {
       biggestNumIndex = number.indexOf(biggestNum);
       number = number.slice(biggestNumIndex);
       k -= biggestNumIndex;
+      //   biggestNum = 0;
+      console.log(number);
     }
   }
-  console.log(number);
 
   return answer;
 }
