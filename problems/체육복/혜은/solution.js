@@ -1,17 +1,25 @@
 function solution(n, lost, reserve) {
   let answer = 0;
-  let hasClothArr = [];
+  let hasClothesArr = [];
 
-  // 모두에게 체육복 한 벌씩 주기
-  for (let student = 0; student < n; student++) hasClothArr.push(1);
-  // 여벌 체육복이 있는 학생들
-  reserve.map((r) => (hasClothArr[r - 1] = hasClothArr[r - 1] + 1));
-  // 체육복 도둑맞은 학생들
-  lost.map((l) => (hasClothArr[l - 1] = hasClothArr[l - 1] - 1));
+  for (let student = 0; student < n; student++) hasClothesArr.push(1);
+  reserve.map((r) => (hasClothesArr[r - 1] += 1));
+  lost.map((l) => (hasClothesArr[l - 1] -= 1));
 
-  // 체육복 빌려주기
+  hasClothesArr.map((hasCloth, idx) => {
+    if (hasCloth === 2) {
+      if (hasClothesArr[idx + 1] && hasClothesArr[idx + 1] === 0) {
+        hasClothesArr[idx + 1] += 1;
+        hasClothesArr[idx] -= 1;
+      } else if (hasClothesArr[idx - 1] === 0) {
+        hasClothesArr[idx - 1] += 1;
+        hasClothesArr[idx] -= 1;
+      } else return;
+    } else return;
+  });
 
-  console.log(hasClothArr);
+  let noClothStudentNum = hasClothesArr.filter((cloth) => 0 === cloth).length;
+  answer = hasClothesArr.length - noClothStudentNum;
 
   return answer;
 }
