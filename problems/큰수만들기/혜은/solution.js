@@ -1,13 +1,15 @@
 function solution(number, k) {
   let answer = "";
-  let numArr = [];
+  let biggestNumIndex = 0;
+
   while (k !== 0) {
-    for (let i = 0; i < number.length; i++) {
-      numArr.push(number.replace(number[i], ""));
+    for (let i = 0; i < k; i++) {
+      biggestNumIndex = number.indexOf(Math.max(number[0], number[k - 1]));
+      number = number.slice(biggestNumIndex);
+      k -= biggestNumIndex;
     }
-    numArr.sort((a, b) => b - a).splice(1);
   }
-  console.log(numArr);
+  console.log(biggestNumIndex);
 
   return answer;
 }
