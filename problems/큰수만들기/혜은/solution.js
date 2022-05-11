@@ -7,6 +7,7 @@ function solution(number, k) {
     biggestNumIndex = number.indexOf(Math.max(number[i], number[k - 1]));
     number = number.slice(biggestNumIndex);
     k -= biggestNumIndex;
+    i++;
   }
   console.log(number);
 
