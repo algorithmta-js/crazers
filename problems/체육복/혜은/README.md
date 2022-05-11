@@ -10,6 +10,7 @@
 ```
 function solution(n, lost, reserve) {
   let answer = 0;
+  // 학생들의 체육복 개수 배열
   let hasClothesArr = [];
 
   // 모두에게 체육복 한 벌씩 주기
@@ -18,17 +19,21 @@ function solution(n, lost, reserve) {
   reserve.map((r) => (hasClothesArr[r - 1] += 1));
   // 체육복 도둑맞은 학생들
   lost.map((l) => (hasClothesArr[l - 1] -= 1));
-  // 체육복 빌려주기
+
+  // 체육복 빌려주는 함수
+  function lendingCloth(lendStudent, borrowStudent) {
+    hasClothesArr[borrowStudent] += 1;
+    hasClothesArr[lendStudent] -= 1;
+  }
+
   hasClothesArr.map((hasCloth, idx) => {
     if (hasCloth === 2) { // 옷이 두 개인 학생들에 한해 검사
-      if (hasClothesArr[idx + 1] && hasClothesArr[idx + 1] === 0) {
+      if (hasClothesArr[idx - 1] === 0) {
         // 바로 뒷 번호의 학생의 옷이 없을 때
-        hasClothesArr[idx + 1] += 1;
-        hasClothesArr[idx] -= 1;
-      } else if (hasClothesArr[idx - 1] === 0) {
+        lendingCloth(idx, idx - 1);
+      } else if (hasClothesArr[idx + 1] === 0) {
         // 바로 앞 번호의 학생의 옷이 없을 때
-        hasClothesArr[idx - 1] += 1;
-        hasClothesArr[idx] -= 1;
+        lendingCloth(idx, idx + 1);
       } else return;
     } else return;
   });
@@ -43,3 +48,5 @@ function solution(n, lost, reserve) {
 
 근데 이걸 그리디를 어떻게 적용한다는 걸까요
 그리고 모든 테스트 케이스를 통과하지 못하는 이유는?
+if (hasClothesArr[idx + 1] && hasClothesArr[idx + 1] === 0) 이렇게
+hasClothesArr[idx + 1]가 존재할 때만 이렇게 해주면 왜 안되나?
