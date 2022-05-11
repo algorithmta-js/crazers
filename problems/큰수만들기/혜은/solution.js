@@ -1,20 +1,38 @@
+class Stack {
+  constructor() {
+    this.arr = [];
+    this.index = 0;
+  }
+  push(item) {
+    this.arr[this.index++] = item;
+  }
+  pop() {
+    if (this.index <= 0) return null;
+    else {
+      const result = this.arr[--this.index];
+      return result;
+    }
+  }
+}
+
 function solution(number, k) {
   let answer = "";
-  let biggestNum = "";
-  let biggestNumIndex = 0;
+  let stack = "";
+  let n = number;
 
-  while (k !== 0) {
-    for (let j = 0; j < k; j++) {
-      for (let i = j; i < k; i++) {
-        if (number[i] > biggestNum) {
-          biggestNum = number[i];
-        } else return;
+  while (n !== 0) {
+    stack += n[0];
+    n.substring(1);
+
+    for (let i = 0; i < number.length - k; ) {
+      if (stack[i] >= n[0]) {
+        stack.push(n[0]);
+        n = n.slice(1);
+        i++;
+      } else {
+        stack.pop();
+        stack.push(n[0]);
       }
-      biggestNumIndex = number.indexOf(biggestNum);
-      number = number.slice(biggestNumIndex);
-      k -= biggestNumIndex;
-      //   biggestNum = 0;
-      console.log(number);
     }
   }
 
