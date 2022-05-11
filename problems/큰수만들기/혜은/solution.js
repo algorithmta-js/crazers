@@ -1,13 +1,19 @@
 function solution(number, k) {
   let answer = "";
+  let biggestNum = 0;
   let biggestNumIndex = 0;
 
   while (k !== 0) {
-    let i = 0;
-    biggestNumIndex = number.indexOf(Math.max(number[i], number[k - 1]));
-    number = number.slice(biggestNumIndex);
-    k -= biggestNumIndex;
-    i++;
+    for (let j = 0; j < k; j++) {
+      for (let i = j; i < k; i++) {
+        if (number[i] > biggestNum) {
+          biggestNum = number[i];
+        } else return;
+      }
+      biggestNumIndex = number.indexOf(biggestNum);
+      number = number.slice(biggestNumIndex);
+      k -= biggestNumIndex;
+    }
   }
   console.log(number);
 
