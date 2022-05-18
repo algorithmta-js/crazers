@@ -153,11 +153,115 @@
 </div>
 </details>
 
-
+---
 
 ### 우선순위큐와 힙
 
+<details>
+<summary>
+  
+   <img src="https://img.shields.io/badge/Level3-yellow" />
+   
+   <a href="/problems/디스크컨트롤러">
+     <b>Programmers : 디스크컨트롤러</b>
+  </a>
+  
+</summary>
+<div markdown="1">
+  
+<br>
+    
+|[혁진](/problems/디스크컨트롤러/혁진)|소령|혜은|[서희](/problems/디스크컨트롤러/서희)|주희|
+|--|--|--|--|--|
+
+</div>
+</details>
+
+<details>
+<summary>
+  
+   <img src="https://img.shields.io/badge/Level3-yellow" />
+   
+   <a href="/problems/이중우선순위큐">
+     <b>Programmers : 이중우선순위큐</b>
+  </a>
+  
+</summary>
+<div markdown="1">
+  
+<br>
+    
+|[혁진](/problems/이중우선순위큐/혁진)|소령|[혜은](/problems/이중우선순위큐/혜은)|서희|주희|
+|--|--|--|--|--|
+
+</div>
+</details>
+
+---
+
 ### 그리디
+
+<details>
+<summary>
+  
+   <img src="https://img.shields.io/badge/Level3-yellow" />
+   
+   <a href="/problems/단속카메라">
+     <b>Programmers : 단속카메라</b>
+  </a>
+  
+</summary>
+<div markdown="1">
+  
+<br>
+    
+|혁진|소령|혜은|[서희](/problems/단속카메라/서희)|주희|
+|--|--|--|--|--|
+
+</div>
+</details>
+
+<details>
+<summary>
+  
+   <img src="https://img.shields.io/badge/Level1-green" />
+   
+   <a href="/problems/체육복">
+     <b>Programmers : 체육복</b>
+  </a>
+  
+</summary>
+<div markdown="1">
+  
+<br>
+    
+|[혁진](/problems/체육복/혁진)|소령|혜은|서희|주희|
+|--|--|--|--|--|
+
+</div>
+</details>
+
+<details>
+<summary>
+  
+   <img src="https://img.shields.io/badge/Level2-blue" />
+   
+   <a href="/problems/구명보트">
+     <b>Programmers : 구명보트</b>
+  </a>
+  
+</summary>
+<div markdown="1">
+  
+<br>
+    
+|[혁진](/problems/구명보트/혁진)|소령|혜은|서희|주희|
+|--|--|--|--|--|
+
+</div>
+</details>
+
+---
 
 ### 브루트포스와 백트래킹
 

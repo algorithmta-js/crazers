@@ -28,7 +28,7 @@ function solution(priorities, location) {
   };
 
   // 1. [중요도, 인덱스 넘버]의 요소로 이뤄진 새 배열 생성
-  const printList = priorities.map((priority, index) => [priority, index]);
+  const printList = [...priorities.entries()];
   // 2.중요도를 기준으로 정렬
   queueSort(printList);
   // 3. 내가 요청한 location의 위치 찾기
