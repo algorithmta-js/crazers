@@ -9,5 +9,4 @@ tickets가 [["ICN", "JFK"], ["HND", "IAD"], ["JFK", "HND"]]이면, return은 ["I
 
 **해결과정)**
 최단경로니까 BFS를 사용해야 될 거 같은데 어떻게 ??
-
-1. index[0]를 키 값, index[1]을 value 값으로 갖는 객체를 만든다.
+는 라. 방문 경로니까 DFS 사용해야 됨 ㅋㅋ
