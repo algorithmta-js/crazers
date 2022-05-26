@@ -13,11 +13,11 @@ Leo가 본 카펫에서 갈색 격자의 수 brown, 노란색 격자의 수 yell
 function solution(brown, yellow) {
   let answer = [];
   // 너비는 brown + yellow이다
-  const carpetWidth = brown + yellow;
+  const carpetSize = brown + yellow;
   // 약수 구하기
   const divisors = [];
-  for (let i = 3; i < carpetWidth; i++) {
-    if (carpetWidth % i === 0) {
+  for (let i = 3; i < carpetSize; i++) {
+    if (carpetSize % i === 0) {
       divisors.push(i);
     }
   }
@@ -25,11 +25,11 @@ function solution(brown, yellow) {
   const possibleDivisors = divisors.filter(
     (divisor) => divisor <= brown / 2 - 1
   );
-  // 가능한 약수배열 중 곱해서 carpetWidth가 나오는 약수들 구하기
+  // 가능한 약수배열 중 곱해서 carpetSize가 나오는 약수들 구하기
   for (let i = possibleDivisors.length; i >= 0; i--) {
-    if (possibleDivisors.includes(carpetWidth / possibleDivisors[i])) {
+    if (possibleDivisors.includes(carpetSize / possibleDivisors[i])) {
       answer.push(possibleDivisors[i]);
-      if (possibleDivisors[i] === carpetWidth / possibleDivisors[i]) {
+      if (possibleDivisors[i] === carpetSize / possibleDivisors[i]) {
         answer.push(possibleDivisors[i]);
       }
     }
