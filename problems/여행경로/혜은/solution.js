@@ -1,6 +1,7 @@
 function solution(tickets) {
   let answer = [];
-  BFS(newObject(tickets), "ICN");
+  const newTickets = newObject(tickets);
+  BFS(newTickets, "ICN");
 
   console.log(BFS(newObject(tickets), "ICN"));
   return answer;
