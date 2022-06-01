@@ -1,3 +1,5 @@
+https://programmers.co.kr/learn/courses/30/lessons/42840?language=javascript
+
 //문제의 수 모름, 정답 모름.. 얘가 맞는지 아닌지 확인하려면 문제 수만큼 각 수포자의 정답을 한번씩 돌아봐야..겠지..?
 //1번 수포자는 1,2,3,4,5 순서
 //2번 수포자는 2,1 2,3 2,4 2,5 순서
