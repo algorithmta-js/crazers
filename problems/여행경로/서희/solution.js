@@ -1,22 +1,24 @@
 function solution(tickets) {
-  const airportQueue = new Array();
-  const visitedTickets = new Array(tickets.length).fill(false);
-  tickets = [...tickets].sort();
+  let airportQueue = new Array();
 
-  function DFS(start, count) {
-    airportQueue.push(start);
+  function DFS(start, currentQueue, currentTickets) {
+    if (currentTickets.length === 0 && airportQueue.length === 0) {
+      airportQueue = [...currentQueue, start];
+      return true;
+    }
 
-    if (count === tickets.length) return airportQueue;
+    for (let idx = 0; idx < currentTickets.length; idx += 1) {
+      const [nextStart, nextEnd] = currentTickets[idx];
 
-    for (let idx = 0; idx < tickets.length; idx += 1) {
-      const [nextStart, nextEnd] = tickets[idx];
-
-      if (!visitedTickets[idx] && nextStart === start) {
-        visitedTickets[idx] = true;
-        DFS(nextEnd, count + 1);
+      if (nextStart === start) {
+        const copyCurrent = [...currentQueue, nextStart];
+        const copyTickets = [...currentTickets];
+        copyTickets.splice(idx, 1);
+        DFS(nextEnd, copyCurrent, copyTickets);
       }
     }
   }
-  DFS("ICN", 0);
+
+  DFS("ICN", [], [...tickets].sort());
   return airportQueue;
 }
