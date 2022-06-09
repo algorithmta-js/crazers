@@ -11,14 +11,14 @@
     유저가 신고한 모든 내용을 취합하여 마지막에 한꺼번에 게시판 이용 정지를 시키면서 정지 메일을 발송합니다.
 
 **해결과정)**
-report를 공백 기준으로 앞과 뒤를 나눈다.
-report의 요소가 완전히 같은 건 제외.
 
-1. 유저가 신고한 ID를 추려내 신고당한 횟수 확인
-   report의 요소 중 완전히 같은 건 삭제한 배열 리턴
-   id_list를 돌면서 id가 report 뒤 id(중복 제거 배열을 공백 기준으로 나누기)와 같을 경우, 해당 아이디의 신고당한 횟수 +1 해서 신고당한 횟수 배열 만들기
+1. report에서 중복 제거해 배열 리턴
 
-2. k번 이상일 때 정지된 ID 배열 만들기
+2. 신고당한 횟수 배열 만들기
+   id_list.length만큼 0이 있는 배열 만들기
+   report 공백 앞 문자열이 id_list에서 몇 번째 index에 있는지 확인하여, reportNumArr의 해당 index에 1을 더해준다.
 
-3. id_list를 돌면서 결과메일 받을 id 확인하기
-   id가 report 앞 id와 같을 때, report 뒤 id가 2.의 배열의 요소가 있는지 카운트 하기
+3. k번 이상일 때 정지된 ID 배열 만들기
+
+4. id_list를 돌면서 결과메일 받을 id 확인하기
+   먼저 3.의 배열 안에 report 뒤 id가 있을 때 report 앞 id가 id_list의 몇 번째 index에 있는지 확인하고, receiveResultMailArr의 해당 index에 1을 더해준다.
